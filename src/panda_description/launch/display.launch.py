@@ -18,7 +18,7 @@ def generate_launch_description():
                                       description="Absolute path to robot urdf file")
 
     ros_distro = os.environ["ROS_DISTRO"]
-    is_ignition = "True" if ros_distro == "humble" else "False"
+    is_ignition = "True" if ros_distro == "jazzy" else "False"
 
     robot_description = ParameterValue(Command([
             "xacro ",
