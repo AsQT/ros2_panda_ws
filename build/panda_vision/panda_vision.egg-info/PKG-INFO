@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: panda-vision
+Version: 0.0.0
+Summary: Color detection package for Panda robot vision (RGB object detection)
+Maintainer: utk
+Maintainer-email: kutkarsh706@gmail.com
+License: MIT
+Provides-Extra: test
