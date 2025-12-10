@@ -1,2 +1,0 @@
-[console_scripts]
-color_detector = panda_vision.color_detector:main

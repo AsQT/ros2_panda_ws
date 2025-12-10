@@ -296,4 +296,17 @@ This project is licensed under the **MIT License**.
 Maintained by **[Curious-Utkarsh](https://github.com/Curious-Utkarsh)**
 Inspired by real-world **pick-and-place robotic** applications.
 
----
+-------------------------- CHAY ROBOT PANDA -----------------------
+
++ Terminal 1 (Chạy Chương Trình Chính Gazebo+Moveit+Camera):
+cd ~/Ros2_Panda
+source install/setup.bash
+ros2 launch panda_bringup pick_and_place.launch.py
++ Terminal 2 (Chạy Script Fix Pose):
+cd ~/Ros2_Panda
+source install/setup.bash
+python3 src/fix_pose.py  # <-- CHẠY LỆNH NÀY
++ Terminal 3 (Chạy Code pick and place):
+cd ~/Ros2_Panda
+source install/setup.bash
+ros2 run pymoveit2 pick_and_place.py --ros-args -p target_color:=R
