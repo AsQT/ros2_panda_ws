@@ -1,4 +1,4 @@
-  GNU nano 7.2                       .gitignore                                 
+                             
 # ===== ROS2 workspace build artifacts =====
 build/
 install/
