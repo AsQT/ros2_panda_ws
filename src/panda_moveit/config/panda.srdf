@@ -2,7 +2,7 @@
 
 <robot name="panda">
     <group name="arm">
-        <chain base_link="panda_link0" tip_link="panda_link7"/>
+        <chain base_link="panda_link0" tip_link="tcp_link"/>
     </group>
     <group name="gripper">
         <link name="panda_hand"/>

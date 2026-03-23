@@ -1,4 +1,3 @@
-# MoveIt uses this configuration for controller management
 moveit_controller_manager: moveit_simple_controller_manager/MoveItSimpleControllerManager
 
 moveit_simple_controller_manager:
@@ -26,4 +25,3 @@ moveit_simple_controller_manager:
     joints:
       - panda_finger_joint1
       - panda_finger_joint2
-

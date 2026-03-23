@@ -15,7 +15,7 @@ def generate_launch_description():
     panda_description_pkg = get_package_share_directory("panda_description")
     panda_moveit_pkg = get_package_share_directory("panda_moveit")
 
-    # 1) Gazebo backend
+    # 1) Gazebo
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(
@@ -26,7 +26,7 @@ def generate_launch_description():
         )
     )
 
-    # 2) MoveIt thuần
+    # 2) MoveIt 
     moveit = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(
@@ -40,55 +40,15 @@ def generate_launch_description():
         }.items(),
     )
 
-    # 3) Vision node
-    vision_node = Node(
-        package="panda_vision",
-        executable="color_detector",
-        name="color_detector",
-        output="screen",
-        parameters=[
-            {"use_sim_time": True},
-        ],
-    )
-
-    # 4) Pick and place node
-    pick_and_place_node = Node(
-        package="pymoveit2",
-        executable="pick_and_place.py",
-        name="pick_and_place",
-        output="screen",
-        parameters=[
-            {"target_color": target_color},
-            {"use_sim_time": True},
-        ],
-    )
-
     return LaunchDescription(
         [
-            DeclareLaunchArgument(
-                "target_color",
-                default_value="R",
-                description="Target color: R, G, or B",
-            ),
-
             gazebo,
 
             # Đợi Gazebo spawn robot + controller rồi mới mở MoveIt
             TimerAction(
-                period=5.0,
+                period=4.0,
                 actions=[moveit],
             ),
 
-            # Đợi thêm chút cho MoveIt lên xong rồi mới chạy vision
-            TimerAction(
-                period=10.0,
-                actions=[vision_node],
-            ),
-
-            # Đợi cuối cùng rồi mới chạy logic pick and place
-            TimerAction(
-                period=15.0,
-                actions=[pick_and_place_node],
-            ),
         ]
     )
