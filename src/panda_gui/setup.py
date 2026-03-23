@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-package_name = "robot_gui"
+package_name = "panda_gui"
 
 setup(
     name=package_name,

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="3">
-  <name>robot_gui</name>
+  <name>panda_gui</name>
   <version>0.0.1</version>
   <description>Robot GUI: RS485 hardware + TF + MoveIt planning (QtPy)</description>
   <maintainer email="user@example.com">user</maintainer>

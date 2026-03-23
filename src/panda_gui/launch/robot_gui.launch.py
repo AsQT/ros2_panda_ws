@@ -16,7 +16,7 @@ def generate_launch_description():
                                  "panda_joint5",
                                  "panda_joint6",
                                  "panda_joint7"]},
-                {"axis_ids": [0,1,2,3,4,5]},
+                {"axis_ids": [0,1,2,3,4,5,6]},
                 {"group_name": "arm"},
                 {"base_frame": "panda_link0"},
                 {"ee_link": "tcp_link"},
