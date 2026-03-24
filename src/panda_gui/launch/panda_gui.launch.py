@@ -4,9 +4,9 @@ from launch_ros.actions import Node
 def generate_launch_description():
     return LaunchDescription([
         Node(
-            package="robot_gui",
-            executable="robot_gui",
-            name="robot_gui",
+            package="panda_gui",
+            executable="panda_gui",
+            name="panda_gui",
             output="screen",
             parameters=[
                 {"joint_names": ["panda_joint1",
@@ -14,7 +14,7 @@ def generate_launch_description():
                                  "panda_joint3",
                                  "panda_joint4",
                                  "panda_joint5",
-                                 "panda_joint6",
+                                 "panda_joint6"
                                  "panda_joint7"]},
                 {"axis_ids": [0,1,2,3,4,5,6]},
                 {"group_name": "arm"},

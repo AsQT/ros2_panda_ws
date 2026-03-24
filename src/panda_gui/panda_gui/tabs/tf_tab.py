@@ -1,5 +1,5 @@
 from qtpy import QtCore, QtWidgets
-from robot_gui.backends.pee_backend import PeeBackend
+from panda_gui.backends.pee_backend import PeeBackend
 
 class TfTab(QtWidgets.QWidget):
     def __init__(self, backend: PeeBackend, parent=None):

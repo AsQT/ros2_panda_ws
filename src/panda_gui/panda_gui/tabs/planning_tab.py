@@ -2,7 +2,7 @@ import threading
 from typing import Dict, List
 
 from qtpy import QtCore, QtWidgets
-from robot_gui.backends.pee_backend import PeeBackend
+from panda_gui.backends.pee_backend import PeeBackend
 
 class PlanningTab(QtWidgets.QWidget):
     worker_finished = QtCore.Signal(bool, str)

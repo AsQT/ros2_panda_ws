@@ -1,13 +1,11 @@
 from qtpy import QtWidgets
 
-from robot_gui.backends.rs485_backend import Rs485Backend
-from robot_gui.backends.pee_backend import PeeBackend
-from robot_gui.tabs.hardware_tab import HardwareTab
-from robot_gui.tabs.tf_tab import TfTab
-from robot_gui.tabs.planning_tab import PlanningTab
+from panda_gui.backends.pee_backend import PeeBackend
+from panda_gui.tabs.tf_tab import TfTab
+from panda_gui.tabs.planning_tab import PlanningTab
 
 class RobotMainWindow(QtWidgets.QMainWindow):
-    def __init__(self, rs485_backend: Rs485Backend, pee_backend: PeeBackend):
+    def __init__(self,  pee_backend: PeeBackend): 
         super().__init__()
         self.setWindowTitle("Robot GUI (Hardware + TF + Planning)")
         self.resize(1200, 760)
@@ -15,13 +13,11 @@ class RobotMainWindow(QtWidgets.QMainWindow):
         tabs = QtWidgets.QTabWidget()
         self.setCentralWidget(tabs)
 
-        self.tab_hw = HardwareTab(rs485_backend)
         self.tab_tf = TfTab(pee_backend)
         self.tab_plan = PlanningTab(pee_backend)
 
         self.tab_tf.btn_copy_to_target.clicked.connect(self._copy_tf_to_target)
 
-        #tabs.addTab(self.tab_hw, "Hardware")
         tabs.addTab(self.tab_tf, "TF")
         tabs.addTab(self.tab_plan, "Planning")
 

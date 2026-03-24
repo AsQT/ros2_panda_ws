@@ -18,7 +18,7 @@ from moveit_msgs.srv import QueryPlannerInterfaces
 from shape_msgs.msg import SolidPrimitive
 from tf2_ros import Buffer, TransformException, TransformListener
 
-from robot_gui.utils.angles import quaternion_to_rpy, rpy_to_quaternion
+from panda_gui.utils.angles import quaternion_to_rpy, rpy_to_quaternion
 
 class PeeBackend(Node):
     """Backend for TF (base_link -> tcp_lik) and MoveIt plan/execute."""
