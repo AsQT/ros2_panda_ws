@@ -36,7 +36,7 @@ def generate_launch_description():
 
     world_name_arg = DeclareLaunchArgument(
         name="world_name",
-        default_value="empty",
+        default_value="workspace",
         description="World name without extension",
     )
 
@@ -135,9 +135,9 @@ def generate_launch_description():
         arguments=[
             "-topic", "robot_description",
             "-name", "panda",
-            "-x", "0.0",
+            "-x", "-0.2",
             "-y", "0.0",
-            "-z", "0.02",
+            "-z", "0.285",
             "-R", "0.0",
             "-P", "0.0",
             "-Y", "0.0",
@@ -149,10 +149,16 @@ def generate_launch_description():
         executable="parameter_bridge",
         arguments=[
             "/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock",
-            "/camera/camera_info@sensor_msgs/msg/CameraInfo[gz.msgs.CameraInfo",
+
+            "/astra/rgb/camera_info@sensor_msgs/msg/CameraInfo[gz.msgs.CameraInfo",
+            "/astra/rgb/image_raw@sensor_msgs/msg/Image[gz.msgs.Image",
+
+            "/astra/depth/camera_info@sensor_msgs/msg/CameraInfo[gz.msgs.CameraInfo",
+            "/astra/depth/image_raw@sensor_msgs/msg/Image[gz.msgs.Image",
+            "/astra/depth/image_raw/points@sensor_msgs/msg/PointCloud2[gz.msgs.PointCloudPacked",
         ],
         output="screen",
-    )
+        )
 
     ros_gz_image_bridge = Node(
         package="ros_gz_image",
